@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fundamentals-of-Programming")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+643669085dff83ffd8374d8027161dff08d3f06b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Fundamentals-of-Programming")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Fundamentals-of-Programming")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
