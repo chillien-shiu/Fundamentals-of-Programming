@@ -7,9 +7,6 @@ class Program
         while (true)
         {
             Console.Clear();
-            Console.WriteLine("==================================================");
-            Console.WriteLine("               EXERCISES - 1 MENU                 ");
-            Console.WriteLine("==================================================");
             Console.WriteLine("1.  Add / Sum Two Numbers");
             Console.WriteLine("2.  Swap Values of Two Variables");
             Console.WriteLine("3.  Multiply two Floating Point Numbers");
