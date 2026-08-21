@@ -1,0 +1,5 @@
+C:\Users\UEH\source\repos\Fundamentals-of-Programming\obj\Debug\net10.0\Fundamentals-of-Programming.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\UEH\source\repos\Fundamentals-of-Programming\obj\Debug\net10.0\Fundamentals-of-Programming.AssemblyInfoInputs.cache
+C:\Users\UEH\source\repos\Fundamentals-of-Programming\obj\Debug\net10.0\Fundamentals-of-Programming.AssemblyInfo.cs
+C:\Users\UEH\source\repos\Fundamentals-of-Programming\obj\Debug\net10.0\Fundamentals-of-Programming.csproj.CoreCompileInputs.cache
+C:\Users\UEH\source\repos\Fundamentals-of-Programming\obj\Debug\net10.0\Fundamentals-of-Programming.sourcelink.json
