@@ -1,9 +1,9 @@
 using System;
 using System.Text;
 
-class Program
+class CSLTB3
 {
-    static void Main5()
+    static void Main1()
     {
         // Cấu hình hiển thị tiếng Việt trên Console
         Console.OutputEncoding = Encoding.UTF8;
@@ -25,11 +25,9 @@ class Program
             Console.WriteLine("❌ Lỗi: Chỉ số mới phải lớn hơn hoặc bằng chỉ số cũ. Vui lòng nhập lại!");
         }
 
-        // 2. Tính lượng điện tiêu thụ
         decimal kwh = chiSoMoi - chiSoCu;
         decimal tienChuaThue = 0m;
 
-        // 3. Tính tiền điện theo các bậc lũy tiến
         decimal kwhConLai = kwh;
 
         // Bậc 1: 0 - 50 kWh (50 kWh đầu) -> 1.806 VNĐ/kWh
@@ -70,30 +68,20 @@ class Program
             tienChuaThue += kwhConLai * 3050m;
         }
 
-        // 4. Tính thuế VAT (8%) và Tổng tiền
         decimal thueVAT = tienChuaThue * 0.08m;
         decimal tongTien = tienChuaThue + thueVAT;
 
-        // Làm tròn đến hàng đơn vị decimal
         tienChuaThue = Math.Round(tienChuaThue, MidpointRounding.AwayFromZero);
         thueVAT = Math.Round(thueVAT, MidpointRounding.AwayFromZero);
         tongTien = Math.Round(tongTien, MidpointRounding.AwayFromZero);
 
-        // 5. In hóa đơn chi tiết
-        Console.WriteLine("\n--------------------------------------------------");
-        Console.WriteLine("                 HÓA ĐƠN TIỀN ĐIỆN                ");
-        Console.WriteLine("--------------------------------------------------");
-        Console.WriteLine($"• Chỉ số cũ           : {chiSoCu:#,##0} kWh");
-        Console.WriteLine($"• Chỉ số mới          : {chiSoMoi:#,##0} kWh");
+        
         Console.WriteLine($"• Điện tiêu thụ       : {kwh:#,##0} kWh");
         Console.WriteLine($"• Tiền điện (chưa thuế): {tienChuaThue:#,##0} VNĐ");
         Console.WriteLine($"• Thuế VAT (8%)       : {thueVAT:#,##0} VNĐ");
-        Console.WriteLine("--------------------------------------------------");
         Console.WriteLine($"• TỔNG TIỀN THANH TOÁN : {tongTien:#,##0} VNĐ");
-        Console.WriteLine("--------------------------------------------------");
+        Console.ReadLine();
     }
-
-    // Hàm phụ trợ hỗ trợ nhập dữ liệu kiểu decimal an toàn
     static decimal NhapSoDecimal(string ghiChu)
     {
         decimal giatri;
@@ -107,4 +95,5 @@ class Program
             Console.WriteLine("❌ Lỗi: Vui lòng nhập một số hợp lệ lớn hơn hoặc bằng 0!");
         }
     }
+    
 }
