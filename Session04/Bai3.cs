@@ -1,48 +1,36 @@
 using System;
-using System.Text;
 
-class Bai03
+class Program
 {
     static void Main()
     {
-        Console.OutputEncoding = Encoding.UTF8;
-        Console.InputEncoding = Encoding.UTF8;
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        Console.WriteLine("PHÂN LOẠI TAM GIÁC");
 
-        Console.WriteLine("TÍNH TỐC ĐỘ DI CHUYỂN");
-
-        double quangDuongKm = NhapSoDouble("Nhập quãng đường (km): ");
-        double gio = NhapSoDouble("Nhập số giờ: ");
-        double phut = NhapSoDouble("Nhập số phút: ");
-        double giay = NhapSoDouble("Nhập số giây: ");
-
-        // Quy đổi tổng thời gian ra giờ
-        double tongThoiGianGio = gio + (phut / 60.0) + (giay / 3600.0);
-
-        if (tongThoiGianGio <= 0)
+        Console.Write("Nhập độ dài cạnh thứ 1: ");
+        double a = double.Parse(Console.ReadLine());
+        Console.Write("Nhập độ dài cạnh thứ 2: ");
+        double b = double.Parse(Console.ReadLine());
+        Console.Write("Nhập độ dài cạnh thứ 3: ");
+        double c = double.Parse(Console.ReadLine());
+        if (a + b > c && a + c > b && b + c > a)
         {
-            Console.WriteLine("Lỗi: Tổng thời gian phải lớn hơn 0!");
+            if (a == b && b == c)
+            {
+                Console.WriteLine("Đây là Tam giác đều.");
+            }
+            else if (a == b || a == c || b == c)
+            {
+                Console.WriteLine("Đây là Tam giác cân.");
+            }
+            else
+            {
+                Console.WriteLine("Đây là Tam giác thường (Scalene).");
+            }
         }
         else
         {
-            double tocDoKmH = quangDuongKm / tongThoiGianGio;
-            double tocDoMilesH = (quangDuongKm * 0.621371) / tongThoiGianGio;
-
-            Console.WriteLine($"\nTốc độ (km/h)   : {tocDoKmH:F2} km/h");
-            Console.WriteLine($"Tốc độ (miles/h): {tocDoMilesH:F2} miles/h");
-        }
-
-        Console.WriteLine("\nBấm phím bất kỳ để thoát...");
-        Console.ReadKey();
-    }
-
-    static double NhapSoDouble(string ghiChu)
-    {
-        double giaTri;
-        while (true)
-        {
-            Console.Write(ghiChu);
-            if (double.TryParse(Console.ReadLine(), out giaTri) && giaTri >= 0) return giaTri;
-            Console.WriteLine("Lỗi: Vui lòng nhập số hợp lệ >= 0!");
+            Console.WriteLine("Ba độ dài trên không tạo thành một tam giác hợp lệ.");
         }
     }
 }

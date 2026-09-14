@@ -1,35 +1,44 @@
 using System;
-using System.Text;
 
-class Bai04
+class Program
 {
     static void Main()
     {
-        Console.OutputEncoding = Encoding.UTF8;
-        Console.InputEncoding = Encoding.UTF8;
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        Console.WriteLine("XÁC ĐỊNH GÓC PHẦN TƯ CỦA TỌA ĐỘ");
 
-        Console.WriteLine("TÍNH DIỆN TÍCH VÀ THỂ TÍCH HÌNH CẦU");
+        Console.Write("Nhập giá trị hoành độ X: ");
+        int x = int.Parse(Console.ReadLine());
+        Console.Write("Nhập giá trị tung độ Y: ");
+        int y = int.Parse(Console.ReadLine());
 
-        double banKinh = NhapSoDouble("Nhập bán kính hình cầu (r): ");
-
-        double dienTich = 4 * Math.PI * Math.Pow(banKinh, 2);
-        double theTich = (4.0 / 3.0) * Math.PI * Math.Pow(banKinh, 3);
-
-        Console.WriteLine($"\nDiện tích bề mặt (S) = {dienTich:F2}");
-        Console.WriteLine($"Thể tích hình cầu (V)  = {theTich:F2}");
-
-        Console.WriteLine("\nBấm phím bất kỳ để thoát...");
-        Console.ReadKey();
-    }
-
-    static double NhapSoDouble(string ghiChu)
-    {
-        double giaTri;
-        while (true)
+        if (x > 0 && y > 0)
         {
-            Console.Write(ghiChu);
-            if (double.TryParse(Console.ReadLine(), out giaTri) && giaTri > 0) return giaTri;
-            Console.WriteLine("Lỗi: Bán kính phải là số lớn hơn 0!");
+            Console.WriteLine($"Điểm tọa độ ({x},{y}) nằm ở Góc phần tư thứ nhất (Góc I).");
+        }
+        else if (x < 0 && y > 0)
+        {
+            Console.WriteLine($"Điểm tọa độ ({x},{y}) nằm ở Góc phần tư thứ hai (Góc II).");
+        }
+        else if (x < 0 && y < 0)
+        {
+            Console.WriteLine($"Điểm tọa độ ({x},{y}) nằm ở Góc phần tư thứ ba (Góc III).");
+        }
+        else if (x > 0 && y < 0)
+        {
+            Console.WriteLine($"Điểm tọa độ ({x},{y}) nằm ở Góc phần tư thứ tư (Góc IV).");
+        }
+        else if (x == 0 && y == 0)
+        {
+            Console.WriteLine($"Điểm tọa độ ({x},{y}) trùng với Gốc tọa độ O.");
+        }
+        else if (x == 0)
+        {
+            Console.WriteLine($"Điểm tọa độ ({x},{y}) nằm trên trục tung Oy.");
+        }
+        else
+        {
+            Console.WriteLine($"Điểm tọa độ ({x},{y}) nằm trên trục hoành Ox.");
         }
     }
 }

@@ -1,44 +1,36 @@
-using System;
+﻿using System;
 
 class Program
 {
-    static void Main()
+    // 4.1 In tất cả các số nguyên tố nhỏ hơn N
+    public static void PrintPrimesLessThan(int limit)
     {
-        Console.OutputEncoding = System.Text.Encoding.UTF8;
-        Console.WriteLine("XÁC ĐỊNH GÓC PHẦN TƯ CỦA TỌA ĐỘ");
+        Console.WriteLine($"Các số nguyên tố nhỏ hơn {limit}:");
+        for (int i = 2; i < limit; i++)
+        {
+            if (Exercise3.IsPrime(i))
+            {
+                Console.Write(i + " ");
+            }
+        }
+        Console.WriteLine();
+    }
 
-        Console.Write("Nhập giá trị hoành độ X: ");
-        int x = int.Parse(Console.ReadLine());
-        Console.Write("Nhập giá trị tung độ Y: ");
-        int y = int.Parse(Console.ReadLine());
-
-        if (x > 0 && y > 0)
+    // 4.2 In N số nguyên tố đầu tiên
+    public static void PrintFirstNPrimes(int n)
+    {
+        Console.WriteLine($"{n} số nguyên tố đầu tiên:");
+        int count = 0;
+        int number = 2;
+        while (count < n)
         {
-            Console.WriteLine($"Điểm tọa độ ({x},{y}) nằm ở Góc phần tư thứ nhất (Góc I).");
+            if (Exercise3.IsPrime(number))
+            {
+                Console.Write(number + " ");
+                count++;
+            }
+            number++;
         }
-        else if (x < 0 && y > 0)
-        {
-            Console.WriteLine($"Điểm tọa độ ({x},{y}) nằm ở Góc phần tư thứ hai (Góc II).");
-        }
-        else if (x < 0 && y < 0)
-        {
-            Console.WriteLine($"Điểm tọa độ ({x},{y}) nằm ở Góc phần tư thứ ba (Góc III).");
-        }
-        else if (x > 0 && y < 0)
-        {
-            Console.WriteLine($"Điểm tọa độ ({x},{y}) nằm ở Góc phần tư thứ tư (Góc IV).");
-        }
-        else if (x == 0 && y == 0)
-        {
-            Console.WriteLine($"Điểm tọa độ ({x},{y}) trùng với Gốc tọa độ O.");
-        }
-        else if (x == 0)
-        {
-            Console.WriteLine($"Điểm tọa độ ({x},{y}) nằm trên trục tung Oy.");
-        }
-        else
-        {
-            Console.WriteLine($"Điểm tọa độ ({x},{y}) nằm trên trục hoành Ox.");
-        }
+        Console.WriteLine();
     }
 }

@@ -1,24 +1,23 @@
 using System;
-using System.Text;
 
-class Bai02
+class Program
 {
     static void Main()
     {
-        Console.OutputEncoding = Encoding.UTF8;
-        Console.InputEncoding = Encoding.UTF8;
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        Console.WriteLine("TÌM SỐ LỚN NHẤT TRONG 3 SỐ");
 
-        Console.WriteLine("BẢNG GIÁ TRỊ HÀM SỐ x = y^2 + 2y + 1");
-        Console.WriteLine("y\tx");
-        Console.WriteLine("----------------");
+        Console.Write("Nhập số thứ nhất: ");
+        int a = int.Parse(Console.ReadLine());
+        Console.Write("Nhập số thứ hai: ");
+        int b = int.Parse(Console.ReadLine());
+        Console.Write("Nhập số thứ ba: ");
+        int c = int.Parse(Console.ReadLine());
 
-        for (int y = -5; y <= 5; y++)
-        {
-            int x = y * y + 2 * y + 1;
-            Console.WriteLine($"{y}\t{x}");
-        }
+        int max = a;
+        if (b > max) max = b;
+        if (c > max) max = c;
 
-        Console.WriteLine("\nBấm phím bất kỳ để thoát...");
-        Console.ReadKey();
+        Console.WriteLine($"Số lớn nhất trong 3 số là: {max}");
     }
 }

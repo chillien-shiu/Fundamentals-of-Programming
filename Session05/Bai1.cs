@@ -1,22 +1,20 @@
 using System;
+using System.Linq;
 
 class Program
 {
-    static void Main()
+    public static int FindMaxOfThree(int a, int b, int c)
     {
-        Console.OutputEncoding = System.Text.Encoding.UTF8;
-        Console.WriteLine("KIỂM TRA SỐ CHẴN HAY SỐ LẺ");
+        return Math.Max(a, Math.Max(b, c));
+    }
 
-        Console.Write("Nhập vào một số nguyên: ");
-        int n = int.Parse(Console.ReadLine());
-
-        if (n % 2 == 0)
+    public static int FindMax(int firstNumber, params int[] otherNumbers)
+    {
+        int max = firstNumber;
+        foreach (int num in otherNumbers)
         {
-            Console.WriteLine($"{n} là số chẵn.");
+            if (num > max) max = num;
         }
-        else
-        {
-            Console.WriteLine($"{n} là số lẻ.");
-        }
+        return max;
     }
 }

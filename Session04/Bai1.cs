@@ -1,56 +1,22 @@
 using System;
-using System.Text;
 
-class Bai01
+class Program
 {
     static void Main()
     {
-        Console.OutputEncoding = Encoding.UTF8;
-        Console.InputEncoding = Encoding.UTF8;
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        Console.WriteLine("KIỂM TRA SỐ CHẴN HAY SỐ LẺ");
 
-        Console.WriteLine("TÍNH TOÁN 2 SỐ");
+        Console.Write("Nhập vào một số nguyên: ");
+        int n = int.Parse(Console.ReadLine());
 
-        double soThuNhat = NhapSoDouble("Nhập số thứ nhất: ");
-
-        Console.Write("Nhập phép tính (+, -, *, /): ");
-        char phepTinh = Console.ReadLine()![0];
-
-        double soThuHai = NhapSoDouble("Nhập số thứ hai: ");
-        double ketQua = 0;
-        bool hopLe = true;
-
-        switch (phepTinh)
+        if (n % 2 == 0)
         {
-            case '+': ketQua = soThuNhat + soThuHai; break;
-            case '-': ketQua = soThuNhat - soThuHai; break;
-            case '*': ketQua = soThuNhat * soThuHai; break;
-            case '/':
-                if (soThuHai != 0) ketQua = soThuNhat / soThuHai;
-                else { Console.WriteLine("Lỗi: Không thể chia cho 0!"); hopLe = false; }
-                break;
-            default:
-                Console.WriteLine("Lỗi: Phép tính không hợp lệ!");
-                hopLe = false;
-                break;
+            Console.WriteLine($"{n} là số chẵn.");
         }
-
-        if (hopLe)
+        else
         {
-            Console.WriteLine($"\nKết quả: {soThuNhat} {phepTinh} {soThuHai} = {ketQua}");
-        }
-
-        Console.WriteLine("\nBấm phím bất kỳ để thoát...");
-        Console.ReadKey();
-    }
-
-    static double NhapSoDouble(string ghiChu)
-    {
-        double giaTri;
-        while (true)
-        {
-            Console.Write(ghiChu);
-            if (double.TryParse(Console.ReadLine(), out giaTri)) return giaTri;
-            Console.WriteLine("Lỗi: Vui lòng nhập số hợp lệ!");
+            Console.WriteLine($"{n} là số lẻ.");
         }
     }
 }

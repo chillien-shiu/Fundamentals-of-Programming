@@ -5,11 +5,11 @@ class CSLTB3
 {
     static void Main1()
     {
-        // Cấu hình hiển thị tiếng Việt trên Console
+    
         Console.OutputEncoding = Encoding.UTF8;
         Console.InputEncoding = Encoding.UTF8;
 
-        Console.WriteLine("=== CHƯƠNG TRÌNH TÍNH TIỀN ĐIỆN SINH HOẠT (EVN) ===");
+        Console.WriteLine("CHƯƠNG TRÌNH TÍNH TIỀN ĐIỆN SINH HOẠT (EVN)");
 
         // 1. Nhập chỉ số điện
         decimal chiSoCu = NhapSoDecimal("Nhập chỉ số điện cũ (kWh): ");
@@ -22,7 +22,7 @@ class CSLTB3
             {
                 break;
             }
-            Console.WriteLine("❌ Lỗi: Chỉ số mới phải lớn hơn hoặc bằng chỉ số cũ. Vui lòng nhập lại!");
+            Console.WriteLine("Lỗi: Chỉ số mới phải lớn hơn hoặc bằng chỉ số cũ. Vui lòng nhập lại!");
         }
 
         decimal kwh = chiSoMoi - chiSoCu;
@@ -30,7 +30,6 @@ class CSLTB3
 
         decimal kwhConLai = kwh;
 
-        // Bậc 1: 0 - 50 kWh (50 kWh đầu) -> 1.806 VNĐ/kWh
         if (kwhConLai > 0)
         {
             decimal soKwhBac1 = Math.Min(kwhConLai, 50m);
@@ -38,7 +37,6 @@ class CSLTB3
             kwhConLai -= soKwhBac1;
         }
 
-        // Bậc 2: 51 - 100 kWh (50 kWh tiếp) -> 1.866 VNĐ/kWh
         if (kwhConLai > 0)
         {
             decimal soKwhBac2 = Math.Min(kwhConLai, 50m);
@@ -46,7 +44,6 @@ class CSLTB3
             kwhConLai -= soKwhBac2;
         }
 
-        // Bậc 3: 101 - 200 kWh (100 kWh tiếp) -> 2.167 VNĐ/kWh
         if (kwhConLai > 0)
         {
             decimal soKwhBac3 = Math.Min(kwhConLai, 100m);
@@ -54,7 +51,6 @@ class CSLTB3
             kwhConLai -= soKwhBac3;
         }
 
-        // Bậc 4: 201 - 300 kWh (100 kWh tiếp) -> 2.729 VNĐ/kWh
         if (kwhConLai > 0)
         {
             decimal soKwhBac4 = Math.Min(kwhConLai, 100m);
@@ -62,7 +58,6 @@ class CSLTB3
             kwhConLai -= soKwhBac4;
         }
 
-        // Bậc 5: Từ 301 kWh trở lên -> 3.050 VNĐ/kWh
         if (kwhConLai > 0)
         {
             tienChuaThue += kwhConLai * 3050m;
@@ -92,7 +87,7 @@ class CSLTB3
             {
                 return giatri;
             }
-            Console.WriteLine("❌ Lỗi: Vui lòng nhập một số hợp lệ lớn hơn hoặc bằng 0!");
+            Console.WriteLine("Lỗi: Vui lòng nhập một số hợp lệ lớn hơn hoặc bằng 0!");
         }
     }
     
