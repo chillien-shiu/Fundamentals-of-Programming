@@ -1,18 +1,25 @@
 using System;
+using System.Text;
 
 class Program
 {
-    public static bool IsPrime(int number)
+    static void Main()
     {
-        if (number <= 1) return false;
-        if (number == 2) return true;
-        if (number % 2 == 0) return false;
+        Console.OutputEncoding = Encoding.UTF8;
+        Console.InputEncoding = Encoding.UTF8;
 
-        int boundary = (int)Math.Floor(Math.Sqrt(number));
-        for (int i = 3; i <= boundary; i += 2)
-        {
-            if (number % i == 0) return false;
-        }
-        return true;
+        Console.Write("Nhập a: ");
+        int a = int.Parse(Console.ReadLine());
+        Console.Write("Nhập b: ");
+        int b = int.Parse(Console.ReadLine());
+        Console.Write("Nhập c: ");
+        int c = int.Parse(Console.ReadLine());
+
+        Console.WriteLine($"Số lớn nhất là: {TimMax(a, b, c)}");
+    }
+
+    public static int TimMax(int a, int b, int c)
+    {
+        return Math.Max(Math.Max(a, b), c);
     }
 }

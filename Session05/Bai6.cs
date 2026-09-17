@@ -1,16 +1,26 @@
 using System;
-using System.Linq;
+using System.Text;
 
-class Exercise6
+class Program
 {
-    public static bool IsPangram(string input)
+    static void Main()
     {
-        if (string.IsNullOrWhiteSpace(input)) return false;
+        Console.OutputEncoding = Encoding.UTF8;
+        Console.InputEncoding = Encoding.UTF8;
 
-        var letters = input.ToLower()
-                           .Where(c => char.IsLetter(c))
-                           .Distinct();
+        Console.Write("Nhập n: ");
+        int n = int.Parse(Console.ReadLine());
 
-        return letters.Count() == 26;
+        Console.WriteLine($"KiemTraNguyenTo({n}) -> {KiemTraNguyenTo(n)}");
+    }
+
+    public static bool KiemTraNguyenTo(int n)
+    {
+        if (n <= 1) return false;
+        for (int i = 2; i <= Math.Sqrt(n); i++)
+        {
+            if (n % i == 0) return false;
+        }
+        return true;
     }
 }

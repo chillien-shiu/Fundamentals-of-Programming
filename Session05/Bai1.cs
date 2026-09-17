@@ -1,20 +1,24 @@
 using System;
-using System.Linq;
+using System.Text;
 
 class Program
 {
-    public static int FindMaxOfThree(int a, int b, int c)
+    static void Main()
     {
-        return Math.Max(a, Math.Max(b, c));
+        Console.OutputEncoding = Encoding.UTF8;
+        Console.InputEncoding = Encoding.UTF8;
+
+        Console.Write("Nhập số thứ nhất: ");
+        int a = int.Parse(Console.ReadLine());
+
+        Console.Write("Nhập số thứ hai: ");
+        int b = int.Parse(Console.ReadLine());
+
+        Console.WriteLine($"Tổng hai số là: {TinhTong(a, b)}");
     }
 
-    public static int FindMax(int firstNumber, params int[] otherNumbers)
+    public static int TinhTong(int a, int b)
     {
-        int max = firstNumber;
-        foreach (int num in otherNumbers)
-        {
-            if (num > max) max = num;
-        }
-        return max;
+        return a + b;
     }
 }

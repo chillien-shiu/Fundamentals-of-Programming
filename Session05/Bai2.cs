@@ -1,17 +1,24 @@
 ﻿using System;
+using System.Text;
 
 class Program
 {
-    public static long Factorial(int n)
+    static void Main()
     {
-        if (n < 0) throw new ArgumentException("Số phải không âm!");
-        if (n == 0 || n == 1) return 1;
+        Console.OutputEncoding = Encoding.UTF8;
+        Console.InputEncoding = Encoding.UTF8;
 
-        long result = 1;
-        for (int i = 2; i <= n; i++)
-        {
-            result *= i;
-        }
-        return result;
+        Console.Write("Nhập số n: ");
+        int n = int.Parse(Console.ReadLine());
+
+        if (KiemTraChan(n))
+            Console.WriteLine($"{n} là số chẵn.");
+        else
+            Console.WriteLine($"{n} là số lẻ.");
+    }
+
+    public static bool KiemTraChan(int n)
+    {
+        return n % 2 == 0;
     }
 }
